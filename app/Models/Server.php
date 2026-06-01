@@ -8,7 +8,8 @@ class Server extends Model
 {
     protected $fillable = [
         'user_id',
-        'pterodactyl_id',
+        'driver',
+        'external_id',
         'uuid',
         'name',
         'status',
