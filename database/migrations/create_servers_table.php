@@ -11,7 +11,8 @@ return new class extends Migration
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('pterodactyl_id')->unique();
+            $table->string('driver')->default('pterodactyl');
+            $table->integer('external_id')->unique();
             $table->string('uuid')->unique();
             $table->string('name');
             $table->string('status')->default('active');
